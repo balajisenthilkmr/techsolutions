@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="shortcut icon" type="x-icon" href="ts.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script>
+      // Client-side form validation
+      function validateForm() {
+        var Firstname = document.getElementById('Firstname').value;
+        var EmailId = document.getElementById('EmailId').value;
+        var Message = document.getElementById('Message').value;
+       
+  
+        if (Firstname === '' || EmailId === '' || Message === '') {
+          alert('Please fill in all fields');
+          return false;
+        }
+  
+        // You can add more specific validation as needed (e.g., email format)
+  
+        return true;
+      }
+    </script>
+
+  
+  </head>
+  <body>
+
+    <%-include('partials/header.ejs')%>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <title>Contact | TechSolutions Inc.</title>
+    <div class="container">
+      <section class="main-content">
+        <h2 class="text-blk headingText">Contact</h2>
+        <p class="text-blk description">
+          Feel free to reach out TechSolutions Inc. with any inquiries or
+          collaboration opportunities.
+        </p>
+        <address class="text-blk description">
+          Email: <a href="mailto:info@techsolutions.com">info@itsolutions.com</a
+          ><br />
+          Phone: +91 91945 67890
+        </address>
+      </section>
+    </div>
+
+    <div class="container mb-3 wrapper">
+      <form class="needs-validation" action="/contact/successpage" method="post" >
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom01">Firstname</label>
+            <input
+            name="firstName"
+              type="text"
+              class="form-control"
+              id="validationCustom01"
+              placeholder="Firstname"
+              value=""
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Lastname</label>
+            <input
+            name="lastName"
+              type="text"
+              class="form-control"
+              id="validationCustom02"
+              placeholder="Lastname"
+              value=""
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationCustomUsername">EmailId</label>
+            <div class="input-group">
+              <!-- <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend"></span>
+              </div> -->
+              <input
+                name="email"
+                type="email"
+                class="form-control"
+                id="validationCustomUsername"
+                placeholder="Email"
+                aria-describedby="inputGroupPrepend"
+                required
+              />
+              <div class="invalid-feedback">Enter your Email Id</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom05">Phone no</label>
+            <input
+              name="phoneNo"
+              type="text"
+              class="form-control"
+              id="validationCustom05"
+              placeholder=" Phone no."
+              required
+            />
+            <div class="invalid-feedback">Please provide a valid Pincode.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+
+        <!-- <div class="form-group">
+          <div class="form-check">
+            <input
+              name="message"
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="invalidCheck"
+              required
+            />
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div> -->
+        <button class="btn btn-primary" onclick="popup()" type="submit">Submit form</button>
+      </form>
+
+      <script>
+        function popup() {
+        
+          document.getElementById("popup").style.display = "block";
+
+        }
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+          "use strict"
+          window.addEventListener(
+            "load",
+            function () {
+              // Fetch all the forms we want to apply custom Bootstrap validation styles to
+              var forms = document.getElementsByClassName("needs-validation");
+              // Loop over them and prevent submission
+              var validation = Array.prototype.filter.call(
+                forms,
+                function (form) {
+                  form.addEventListener(
+                    "submit",
+                    function (event) {
+                      if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                      }
+                      form.classList.add("was-validated");
+                    },
+                    false
+                  );
+                }
+              );
+            },
+            false
+          );
+        })();
+      </script>
+    </div>
+    
+
+    <%-include('partials/footer.ejs')%>
+  </body>
+</html>

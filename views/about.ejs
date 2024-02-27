@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" type="x-icon" href="ts.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>About | TechSolutions Inc.</title>
+</head>
+<body>
+<%- include('partials/header.ejs')%>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<div class="container">
+    <section class="main-content">
+        <h2 class="text-blk headingText">About Us</h2>
+        <p class="text-blk description">We are a team of dedicated professionals passionate about providing top-notch IT solutions to our clients.</p>
+    </section>
+    <div class="responsive-container-block bigContainer">
+        <div class="responsive-container-block Container">
+          <img class="mainImg" src="mission.jpg">
+          <div class="allText aboveText">
+            <p class="text-blk headingText">
+              Our Mission
+            </p>
+            <p class="text-blk description">
+                TechSolutions Inc was founded with a singular mission - to empower businesses with transformative technology solutions that drive growth and success. We strive to be a trusted partner for organizations seeking to leverage the latest advancements in technology to stay ahead in their respective industries.
+            </p>
+          </div>
+        </div>
+        <div class="responsive-container-block Container bottomContainer">
+          <img class="mainImg" src="vision.jpg">
+          <div class="allText bottomText">
+            <p class="text-blk headingText">
+              Our Vision
+            </p>
+            <p class="text-blk description">
+                At TechSolutions Inc, our vision is to be the catalyst for a technologically empowered future, where businesses of all sizes seamlessly integrate innovation to drive sustainable growth and positive change. We aspire to be the forefront of transformative technology, shaping the digital landscape and creating solutions that inspire progress.</p>
+          </div>
+        </div>
+      </div>
+</div>
+<%- include('partials/footer.ejs')%>
+</body>
+</html>
